@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HeadsUpGame</string>
+    <string name="accept_aggrement">By clicking \'Play\', I aceept the Terms of Use and acknowledge the Privacy Policy.</string>
+    <string name="play">Play</string>
+    <string name="categories">Categories:</string>
+    <string name="category_name">Category Name</string>
+    <string name="title">Title</string>
+    <string name="my_decks">My Decks :</string>
+    <string name="word_to_guess">WORD TO GUESS</string>
+    <string name="pass">Pass</string>
+    <string name="fail">Fail</string>
+</resources>
