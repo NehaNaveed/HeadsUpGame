@@ -1,4 +1,4 @@
-package com.example.headsupgame.viewModel
+package com.example.headsupgame.presentation.display.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

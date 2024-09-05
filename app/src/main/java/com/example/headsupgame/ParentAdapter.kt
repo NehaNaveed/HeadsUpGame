@@ -17,6 +17,7 @@ class ParentAdapter(private var decksList: List<DecksData>,private var onClick :
             val childAdapter = ChildAdapter(decksData.categoryList, onClick)
             binding.categoryTitle.text = decksData.name
             binding.childRecycler.adapter = childAdapter
+
         }
 
     }

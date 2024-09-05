@@ -4,8 +4,10 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.headsupgame.dataModels.CategoryData
 import com.example.headsupgame.databinding.ItemsNestedRecBinding
 
@@ -17,7 +19,12 @@ class ChildAdapter(private var catList: List<CategoryData>, private var onItemCl
             binding.titleCategory.text = cat.title
             Glide.with(itemView.context)
                 .load(cat.image)
+                .placeholder(R.drawable.logo) // to set a fallback
+                .error(R.drawable.topimage) // to handle errors
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(binding.imageCategory)
+
             Log.d("IMAGE RESULT", "image : ${binding.imageCategory}")
             binding.imageCategory.setOnClickListener(){
                 onItemClick.invoke(cat)

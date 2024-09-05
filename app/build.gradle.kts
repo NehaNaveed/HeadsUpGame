@@ -62,6 +62,8 @@ dependencies {
     implementation(libs.ssp.android)
 
     implementation(libs.glide)
-
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.kit)
+    implementation(libs.navigation.dynamic.features)
 //    implementation(libs.play.services.auth)
 }

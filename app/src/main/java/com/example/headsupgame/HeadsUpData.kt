@@ -6,23 +6,23 @@ import com.example.headsupgame.dataModels.DecksData
 object HeadsUpData {
 
     private val categoryData = listOf(
-        CategoryData("Sports",Images.sportsImg),
-        CategoryData("Professions",Images.profImg),
-        CategoryData("Animals",Images.animImg),
-        CategoryData("Celebrities",Images.celebImg),
-        CategoryData("Tv Shows",Images.tvImg),
+        CategoryData("Sports",R.drawable.sports),
+        CategoryData("Professions",R.drawable.professions),
+        CategoryData("Animals",R.drawable.animals),
+        CategoryData("Act It Out",R.drawable.actions),
+        CategoryData("Fruits",R.drawable.fruits),
     )
 
-    private val videoCategory = listOf(
-        CategoryData("Step 1",Images.step1),
-        CategoryData("Step 2",Images.step2),
-        CategoryData("Step 3",Images.step3),
-        CategoryData("Step 4",Images.step4),
-        CategoryData("Step 5",Images.step5),
+    private val instructions = listOf(
+        CategoryData("Step 1",R.drawable.step1),
+        CategoryData("Step 2",R.drawable.step2),
+        CategoryData("Step 3",R.drawable.step3),
+        CategoryData("Step 4",R.drawable.step4),
+        CategoryData("Step 5",R.drawable.step5),
     )
 
     val decksData = listOf(
         DecksData("My Decks", categoryData),
-        DecksData("How to Play:", videoCategory)
+        DecksData("How to Play:", instructions)
     )
 }

@@ -25,6 +25,7 @@
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:text="@string/my_decks"
             android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/raleway_fontfam"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -5,4 +5,5 @@
     <color name="green">#008000</color>
     <color name="blue">#007BEF</color>
     <color name="sage">#BCECAC</color>
+    <color name="failColor">#F44336</color>
 </resources>

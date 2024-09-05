@@ -1,4 +1,4 @@
-package com.example.headsupgame
+package com.example.headsupgame.presentation.display.game
 
 import android.app.Application
 import android.hardware.Sensor
@@ -9,8 +9,9 @@ import android.os.CountDownTimer
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.headsupgame.dataModels.Words
 
-class GameScreenViewModel(application: Application) : AndroidViewModel(application) {
+class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _timerText = MutableLiveData<String>()
     val timerText: LiveData<String> = _timerText
@@ -37,9 +38,8 @@ class GameScreenViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun startSensor(listener: SensorEventListener) {
-        accelerometer?.let {
-            sensorManager.registerListener(listener, it, SensorManager.SENSOR_DELAY_NORMAL)
-        }
+            sensorManager.registerListener(listener, accelerometer, SensorManager.SENSOR_DELAY_NORMAL)
+
     }
 
     fun stopSensor(listener: SensorEventListener) {
@@ -49,11 +49,13 @@ class GameScreenViewModel(application: Application) : AndroidViewModel(applicati
     fun processSensorData(event: SensorEvent) {
         val z = event.values[2]
         _sensorOutput.value = when {
-            z > 7 -> "Pass"
-            z < -7 -> "Fail"
+            z > 6 -> "Pass"
+            z < -6 -> "Correct!"
             else -> "Word to Guess"
         }
+
     }
+
 
     override fun onCleared() {
         super.onCleared()
