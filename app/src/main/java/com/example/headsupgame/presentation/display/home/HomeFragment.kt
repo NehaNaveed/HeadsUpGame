@@ -1,19 +1,16 @@
 package com.example.headsupgame.presentation.display.home
 
-import android.content.Intent
-import android.content.pm.ActivityInfo
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.headsupgame.ParentAdapter
 import com.example.headsupgame.R
 import com.example.headsupgame.databinding.FragmentHomeBinding
-import com.example.headsupgame.presentation.display.game.GameFragment
 
 class HomeFragment : Fragment() {
 

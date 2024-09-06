@@ -3,10 +3,9 @@ package com.example.headsupgame
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 import com.example.headsupgame.dataModels.CategoryData
-import com.example.headsupgame.databinding.ItemsRecyclerBinding
 import com.example.headsupgame.dataModels.DecksData
+import com.example.headsupgame.databinding.ItemsRecyclerBinding
 
 //list adapter
 class ParentAdapter(private var decksList: List<DecksData>,private var onClick :(CategoryData) -> Unit ) :
