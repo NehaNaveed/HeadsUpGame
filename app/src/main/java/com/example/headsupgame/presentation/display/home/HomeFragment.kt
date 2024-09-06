@@ -38,10 +38,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.parentRecycler
         homeVm.decksList.observe(viewLifecycleOwner) { decks ->
-            val adapter = ParentAdapter(decks, onClick = { selectedCategory ->
+            adapter = ParentAdapter(decks, onClick = { selectedCategory ->
                 val bundle = Bundle().apply {
                     putString("name",selectedCategory.title)
                 }
+
                 findNavController().navigate(R.id.action_homeFragment_to_gameFragment, bundle)
             })
             recyclerView.adapter = adapter

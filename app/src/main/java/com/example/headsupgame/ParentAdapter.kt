@@ -14,9 +14,10 @@ class ParentAdapter(private var decksList: List<DecksData>,private var onClick :
     inner class ParentViewHolder(val binding: ItemsRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(decksData: DecksData) {
-            val childAdapter = ChildAdapter(decksData.categoryList, onClick)
             binding.categoryTitle.text = decksData.name
+            val childAdapter = ChildAdapter(decksData.categoryList, decksData.name,onClick)
             binding.childRecycler.adapter = childAdapter
+
 
         }
 
