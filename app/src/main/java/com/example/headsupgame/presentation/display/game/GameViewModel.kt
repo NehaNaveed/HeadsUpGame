@@ -17,10 +17,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     val timerText: LiveData<String> = _timerText
     private val randomWords = Words()
 
-    private val _sensorOutput = MutableLiveData<String>()
+    private val _sensorOutput = MutableLiveData<String>("")
     val sensorOutput: LiveData<String> = _sensorOutput
 
-    private val _correctCount = MutableLiveData<Int>().apply { value = 0  }
+    private val _correctCount = MutableLiveData<Int>().apply { value = 0 }
     val correctCount: LiveData<Int> = _correctCount
 
     private val sensorManager: SensorManager =
@@ -39,6 +39,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private var lastSensorOutput = ""
 
     init {
+
         countDownTimer.start()
     }
 
@@ -64,22 +65,23 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
         }
         _sensorOutput.value = when {
-            z > 8 && z <= 12  -> {
+            z > 8 && z <= 12 -> {
                 lastSensorOutput = "Pass"
                 "Pass"
             }
 
-            z < -6 && z >= -12  -> {
+            z < -6 && z >= -12 -> {
                 updateCorrectCount()
                 lastSensorOutput = "Correct!"
                 "Correct!"
             }
 
             else -> when (lastSensorOutput) {
-                "Pass", "Correct!" -> {
+                "Pass", "Correct!","" -> {
                     lastSensorOutput = "Other"
                     wordName.random()
                 }
+
                 else -> _sensorOutput.value
 
             }
