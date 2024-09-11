@@ -27,7 +27,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         application.getSystemService(SensorManager::class.java)
     private val accelerometer: Sensor? = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
-    private val countDownTimer = object : CountDownTimer(40000, 1000) {
+    private val countDownTimer = object : CountDownTimer(60000, 1000) {
         override fun onTick(millisUntilFinished: Long) {
             _timerText.value = "Timer : ${millisUntilFinished / 1000}"
         }
@@ -76,7 +76,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                 "Correct!"
             }
 
-            else -> when (lastSensorOutput) {
+            z > -6 && z < 8 -> when (lastSensorOutput) {
                 "Pass", "Correct!","" -> {
                     lastSensorOutput = "Other"
                     wordName.random()
@@ -85,6 +85,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                 else -> _sensorOutput.value
 
             }
+
+            else -> ""
         }
 
     }

@@ -8,8 +8,8 @@ object HeadsUpData {
     private val categoryData = listOf(
         CategoryData("Sports",R.drawable.sports),
         CategoryData("Professions",R.drawable.professions),
-        CategoryData("Animals",R.drawable.animals),
         CategoryData("Act It Out",R.drawable.actions),
+        CategoryData("Animals",R.drawable.animals),
         CategoryData("Fruits",R.drawable.fruits),
     )
 
